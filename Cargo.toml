@@ -1,0 +1,27 @@
+[package]
+name = "multi-progressbar"
+version = "0.1.0"
+edition = "2021"
+
+authors = ["eternal-flame-AD"]
+description = "A library for displaying multiple progress bars in the terminal designed to not stand in your way."
+license = "Apache-2.0"
+repository = "https://github.com/eternal-flame-AD/multi-progressbar"
+keywords = ["progress", "progress-bar", "tui"]
+readme = "README.md"
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "4.3.11", optional = true, features = ["derive"] }
+crossterm = "0.26.1"
+
+[features]
+bin = ["dep:clap"]
+
+
+[[bin]]
+name = "multi-progressbar-demo"
+path = "src/bin/multi-progressbar-demo/main.rs"
+required-features = ["bin"]
